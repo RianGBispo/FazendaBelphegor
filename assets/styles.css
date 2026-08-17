@@ -167,7 +167,6 @@ option { background: #15101d; color: var(--ink); }
 }
 .sheet-label { font-size: 13px; color: rgba(244, 241, 248, 0.62); margin-top: 8px; line-height: 1.45; }
 .sheet-range { font-size: 11px; color: rgba(244, 241, 248, 0.4); margin-top: 10px; }
-.sheet-link { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: 700; }
 
 .main { padding: 36px 44px 72px; max-width: 1500px; min-width: 0; }
 

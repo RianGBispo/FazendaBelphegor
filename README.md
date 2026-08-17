@@ -14,12 +14,12 @@ assets/app.js       leitura da planilha + telas
 
 ## Telas
 
-| Aba | URL | O que mostra |
-|---|---|---|
-| Visão geral | `#/dash` | KPIs, Top 1, perseguidores, pendentes, últimos registros |
-| Registros | `#/registros` | Tabela completa com busca, filtro de tipo e Pago/Pendente |
-| Ranking | `#/ranking` | Ranking por total farmado, com barra de progresso |
-| Membro | `#/membro/<discord-id>` | Perfil do membro, KPIs e histórico dele |
+| Aba         | URL                     | O que mostra                                              |
+| ----------- | ----------------------- | --------------------------------------------------------- |
+| Visão geral | `#/dash`                | KPIs, Top 1, Funcionários, pendentes, últimos registros   |
+| Registros   | `#/registros`           | Tabela completa com busca, filtro de tipo e Pago/Pendente |
+| Ranking     | `#/ranking`             | Ranking por total farmado, com barra de progresso         |
+| Membro      | `#/membro/<discord-id>` | Perfil do membro, KPIs e histórico dele                   |
 
 As URLs usam hash, então dá para mandar link direto de um membro no Discord.
 
@@ -49,26 +49,26 @@ Cada `git push` novo republica o site automaticamente.
 
 Fonte: aba **`Registros`**, colunas `A:K`, dados a partir da linha 2.
 
-| Coluna | Obrigatória | Observações |
-|---|---|---|
-| Discord ID | recomendada | Usada para agrupar o membro. Sem ela, agrupa pelo Nome |
-| Nome | **sim** | |
-| Tipo | não | Alimenta o filtro de tipos |
-| Quantidade | não | |
-| Total | **sim** | Base do ranking e dos totais |
-| Data | não | Aceita `14/08/2026`, `2026-08-14` ou data real do Sheets |
-| Aprovado por | não | |
-| Pago | não | Aceita `TRUE`, `Sim`, `Pago`, `x`, `1` — o resto vira Pendente |
-| Cargo | não | |
-| Pagamento | não | Se estiver vazio, é calculado como `Total × % do cargo` |
-| % do cargo | não | Aceita `35%`, `0,35` ou `35` |
+| Coluna       | Obrigatória | Observações                                                    |
+| ------------ | ----------- | -------------------------------------------------------------- |
+| Discord ID   | recomendada | Usada para agrupar o membro. Sem ela, agrupa pelo Nome         |
+| Nome         | **sim**     |                                                                |
+| Tipo         | não         | Alimenta o filtro de tipos                                     |
+| Quantidade   | não         |                                                                |
+| Total        | **sim**     | Base do ranking e dos totais                                   |
+| Data         | não         | Aceita `14/08/2026`, `2026-08-14` ou data real do Sheets       |
+| Aprovado por | não         |                                                                |
+| Pago         | não         | Aceita `TRUE`, `Sim`, `Pago`, `x`, `1` — o resto vira Pendente |
+| Cargo        | não         |                                                                |
+| Pagamento    | não         | Se estiver vazio, é calculado como `Total × % do cargo`        |
+| % do cargo   | não         | Aceita `35%`, `0,35` ou `35`                                   |
 
 Valores com `R$`, `$`, ponto de milhar ou vírgula decimal são interpretados corretamente.
 Linhas totalmente vazias são ignoradas. A ordem das colunas é detectada pelo cabeçalho,
 então dá para reordenar sem quebrar o site.
 
 **Requisito:** a planilha precisa estar compartilhada como
-*"Qualquer pessoa com o link — Leitor"*. Não é preciso publicar na web nem usar chave de API.
+_"Qualquer pessoa com o link — Leitor"_. Não é preciso publicar na web nem usar chave de API.
 
 > A planilha é lida direto pelo navegador de quem visita. Não coloque nela nada que
 > não possa ser público.
@@ -79,11 +79,11 @@ Tudo fica no topo de [`assets/app.js`](assets/app.js):
 
 ```js
 const CONFIG = {
-  SHEET_ID: '1Yuynmq_...',   // ID da planilha (parte da URL entre /d/ e /edit)
-  SHEET_NAME: 'Registros',   // nome exato da aba
-  SHEET_LABEL: 'Planilha Belphegor',
-  RANKING_SIZE: 20,          // quantos membros aparecem no ranking
-  AUTO_REFRESH_MS: 5 * 60 * 1000  // recarrega sozinho a cada 5 min (0 desliga)
+  SHEET_ID: "1Yuynmq_...", // ID da planilha (parte da URL entre /d/ e /edit)
+  SHEET_NAME: "Registros", // nome exato da aba
+  SHEET_LABEL: "Planilha Belphegor",
+  RANKING_SIZE: 20, // quantos membros aparecem no ranking
+  AUTO_REFRESH_MS: 5 * 60 * 1000, // recarrega sozinho a cada 5 min (0 desliga)
 };
 ```
 
