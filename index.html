@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fazenda Belphegor</title>
+<meta name="description" content="Painel de farm da Fazenda Belphegor — registros, ranking e pagamentos.">
+<meta name="theme-color" content="#08060d">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='10' fill='%23a855f7'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg-base"></div>
+  <div class="bg-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="glow" id="glow"></div>
+</div>
+
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">FAZENDA<br>BELPHEGOR</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sheet-card">
+      <div class="eyebrow">Planilha</div>
+      <div class="sheet-label" id="sheetLabel">Carregando…</div>
+      <div class="sheet-range">Registros!A2:K</div>
+      <a class="sheet-link" id="sheetLink" href="#" target="_blank" rel="noopener">Abrir planilha ↗</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="page-head">
+      <div class="page-titles">
+        <div class="eyebrow" id="pageKicker">Painel</div>
+        <h1 class="page-title" id="pageTitle">Visão geral da fazenda</h1>
+      </div>
+      <div class="head-actions">
+        <button class="refresh" id="refreshBtn" title="Recarregar dados da planilha">Atualizar</button>
+        <div class="pill-live"><span class="dot"></span><span>Somente visualização</span></div>
+      </div>
+    </header>
+
+    <div id="statusBar" class="status-bar" hidden></div>
+
+    <div id="view"></div>
+
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
